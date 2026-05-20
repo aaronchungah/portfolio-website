@@ -812,4 +812,48 @@ footer {
     padding-left: 7%;
     padding-right: 7%;
   }
+
+    .project-card {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .project-image-wrapper {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .project-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .experience-header {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .experience-info h3 {
+    font-size: 2rem;
+    line-height: 1.15;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  .company-name {
+    font-size: 1.6rem;
+    line-height: 1.2;
+    overflow-wrap: break-word;
+  }
+
+  .timeline {
+    overflow: hidden;
+  }
+
+  .timeline-item {
+    padding-left: 24px;
+  }
 }
