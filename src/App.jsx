@@ -1,5 +1,5 @@
 import "./App.css";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaStar, FaBullhorn, FaGraduationCap, FaMedal } from "react-icons/fa";
 
 const skills = {
   "Programming & Tools": [
@@ -25,18 +25,38 @@ const skills = {
 
 const projects = [
   {
-    title: "Allrecipes Exploratory Data Analysis",
-    text: "Performed exploratory analysis on a large-scale recipes dataset, studying preparation time, ingredients, nutritional values, and user ratings to uncover recipe engagement trends.",
-    tags: ["Python", "Pandas", "EDA", "Visualisation"],
+    title: "Recipes Exploratory Data Analysis Project",
+    image: "/recipes.png",
+    points: ["Cleaned and analysed over 14,000 recipes to study how preparation time, cuisine type, and nutritional values influenced recipe approval.",
+
+      "Explored relationships between user ratings, ingredients, and engagement trends using exploratory data analysis techniques."],
+
+    tags: ["Python", "Pandas", "Plotly", "Matplotlib", "EDA", "Visualisation"],
   },
   {
-    title: "Heart Disease Statistical Report",
-    text: "Built and compared Logistic Regression, KNN, Decision Tree, and Naive Bayes models on healthcare data. Used hypothesis testing, ROC/AUC, and confusion matrix analysis to optimise true positive detection.",
-    tags: ["Python", "Statistics", "Machine Learning", "ROC/AUC"],
+    title: "Heart Disease Regression Statistical Report",
+    image: "/heart.png",
+    points: [
+      "Built and compared Logistic Regression, KNN, Decision Tree, and Naive Bayes models on healthcare data.",
+
+      "Applied ROC/AUC analysis, confusion matrices, and hypothesis testing to evaluate model performance.",
+
+      "Identified trade-offs between sensitivity and precision for medical prediction tasks."
+    ],
+    tags: ["Python", "Statistics", "Machine Learning", "ROC/AUC", "KNN", "Logistic Regression", "Decison Trees"],
   },
   {
     title: "Graduate Singapore Statistical Report",
-    text: "Analysed 2,500+ survey responses using EDA, Cramer’s V, logistic regression, coefficients, and odds ratios to identify predictors of survey completion and employer attractiveness.",
+    image: "/grads.png",
+    points: [
+      "Investigated the key factors influencing whether students would apply for a job using survey response data.",
+
+      "Used logistic regression to model application likelihood and interpret the relative influence of different predictors.",
+
+      "Applied Cramer's V to identify redundant survey questions and support a more streamlined survey design.",
+
+      "Analysed patterns behind survey non-completion to understand possible friction points in the response process."
+    ],
     tags: ["R", "Logistic Regression", "Survey Analytics", "EDA"],
   },
 ];
@@ -47,14 +67,26 @@ const experience = [
     company: "Seagate Technologies",
     logo: "/seagate.jpg",
     period: "May 2026 – Present",
-    text: "Working with manufacturing and automation datasets to analyse cassette movement, factory-floor events, and operational metrics. Built Python-based workflows for log parsing, event correlation, and automation monitoring support.",
+    duration: "7 months",
+    points: [
+    "Analysed manufacturing and automation datasets to identify process optimisation opportunities.",
+    "Investigated operational variables affecting automation efficiency and system performance.",
+    "Built dashboards to provide engineers with real-time feedback and monitoring support.",
+    "Used Python to parse log files, correlate events, and support data-driven improvement initiatives.",
+    "Presented optimisation insights to engineers and stakeholders to support adoption."
+  ]
   },
   {
     title: "Information Communications Specialist",
     company: "Singapore Armed Forces",
     logo: "/saf.jpg",
     period: "Aug 2022 – Nov 2023",
-    text: "Managed IP addressing and communication network configurations during battalion-level exercises involving over 500 servicemen. Worked with ST Engineering to support communication system upgrades and reliability improvements.",
+    duration: "1 year 3 months",
+    points: [
+    "Managed IP addressing and communication network configurations during large-scale battalion exercises involving over 500 servicemen.",
+    "Supported communication system upgrades and reliability improvements in collaboration with engineering teams.",
+    "Maintained stable connectivity across multiple military communication devices and operational systems."
+  ]
   },
 ];
 
@@ -63,7 +95,7 @@ const leadership = [
     title: "Welfare Director",
     org: "NUS Faculty of Science Club",
     image: "/welfare.jpg",
-    text: "Elected with over 70% of votes cast. Led a subcommittee of 18 members overseeing welfare initiatives for 5,500+ students while increasing cash sponsorships by over 50%.",
+    text: "Elected with over 70% of votes cast. Led a subcommittee of 18 members overseeing welfare initiatives for 5,500+ students while increasing cash sponsorships by over 50% through negotiations and pitch meetings",
   },
   {
     title: "Team Leader",
@@ -75,7 +107,7 @@ const leadership = [
     title: "NUS Ambassador",
     org: "Malaysia Sustainability Exchange",
     image:"/malaysia.JPG",
-    text: "Represented RVRC in an overseas sustainability exchange with UMS and UiTM, facilitating discussions on Singapore’s sustainability practices and regional environmental challenges.",
+    text: "Represented RVRC in an overseas sustainability exchange with University Malaysia Sabah (UMS) and Universiti Teknologi MARA (UiTM), facilitating discussions on Singapore’s sustainability practices and regional environmental challenges.",
   },
   {
     title: "Events' Head",
@@ -86,11 +118,31 @@ const leadership = [
 ];
 
 const awards = [
-  "Claire Chiang Student Outstanding Leadership Award",
-  "A' level Oral Presentation Excellence Award",
-  "6 Distinctions in the GCE O' Level Examination",
-  "NTUC Care (Education Awards) 2025 for Academic Excellence",
-  "Silver Bayonet Award for graduating second in cohort in Specialist Cadet School",
+  {
+  title: "Claire Chiang Student Outstanding Leadership Award",
+  icon: <FaStar />
+  },
+
+  {
+  title: "A' level Oral Presentation Excellence Award",
+  icon: <FaBullhorn />
+  },
+
+  {
+  title: "6 Distinctions in the GCE O' Level Examination",
+  icon: <FaGraduationCap />
+  },
+
+  {
+  title: "NTUC Care (Education Awards) 2025 for Academic Excellence",
+  icon: <FaMedal />
+  },
+
+  {
+  title: "Silver Bayonet Award",
+  description: "Awarded for graduating second in my cohort in Specialist Cadet School.",
+  icon: <FaMedal />
+  }
 ];
 
 function App() {
@@ -217,15 +269,32 @@ function App() {
 
         <div className="grid three">
           {projects.map((project) => (
-            <div className="card" key={project.title}>
-              <div className="icon">▣</div>
+            <div className="project-card" key={project.title}>
+
+              <img
+                src={project.image}
+                alt={project.title}
+                className="project-image"
+              />
+
               <h3>{project.title}</h3>
-              <p>{project.text}</p>
-              <div className="tags">
-                {project.tags.map((tag) => (
-                  <span key={tag}>{tag}</span>
+
+              <ul className="project-points">
+                {project.points.map((point, index) => (
+                  <li key={index}>{point}</li>
+                ))}
+              </ul>
+
+             
+
+              <div className="project-tags">
+                {project.tags.map((tag, index) => (
+                  <span key={index} className="project-tag">
+                    {tag}
+                  </span>
                 ))}
               </div>
+
             </div>
           ))}
         </div>
@@ -256,12 +325,17 @@ function App() {
 
             <p className="meta period">
               {item.period}
+              <span className="duration"> · {item.duration}</span>
             </p>
 
           </div>
         </div>
 
-        <p>{item.text}</p>
+        <ul className="experience-points">
+          {item.points.map((point, index) => (
+            <li key={index}>{point}</li>
+          ))}
+        </ul>
 
       </div>
     ))}
@@ -297,9 +371,20 @@ function App() {
 
         <div className="grid five">
           {awards.map((award) => (
-            <div className="award-card" key={award}>
-              <div className="award-icon">☆</div>
-              <p>{award}</p>
+            <div className="award-card" key={award.title}>
+
+              <div className="award-icon">
+                {award.icon}
+              </div>
+
+              <h3>{award.title}</h3>
+              
+              
+              {award.description && (
+                <p className="award-description">
+                  {award.description}
+                </p>
+              )}
             </div>
           ))}
         </div>
@@ -309,8 +394,8 @@ function App() {
         <div>
           <h2>Let’s work together</h2>
           <p>
-            I’m open to opportunities in data science, analytics, product
-            management, and consulting.
+            Feel free to reach out to me about projects relating to Data Science & Analytics, Product
+            Management, and Consulting!
           </p>
         </div>
 
