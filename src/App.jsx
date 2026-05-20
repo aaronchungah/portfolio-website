@@ -95,7 +95,7 @@ const leadership = [
     title: "Welfare Director",
     org: "NUS Faculty of Science Club",
     image: "/welfare.jpg",
-    text: "Elected with over 70% of votes cast. Led a subcommittee of 18 members overseeing welfare initiatives for 5,500+ students while increasing cash sponsorships by over 50% through negotiations and pitch meetings",
+    text: "Elected with over 70% of votes cast. Led a subcommittee of 18 members overseeing welfare initiatives for 5,500+ students while increasing cash sponsorships by over 50% through negotiations and pitch meetings.",
   },
   {
     title: "Team Leader",
