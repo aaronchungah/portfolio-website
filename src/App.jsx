@@ -176,7 +176,7 @@ function App() {
             optimisation.
           </h1>
           <p className="hook">
-            I turn data into decisions; making sure that the right people understand
+            I turn data into decisions, making sure that the right people understand
             and act on it.
           </p>
 
