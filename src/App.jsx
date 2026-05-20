@@ -267,36 +267,41 @@ function App() {
       <section id="projects" className="section">
         <h2>Projects</h2>
 
-        <div className="grid three">
+        <div className="projects-list">
           {projects.map((project) => (
             <div className="project-card" key={project.title}>
 
-              <img
-                src={project.image}
-                alt={project.title}
-                className="project-image"
-              />
+              <div className="project-image-wrapper">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="project-image"
+                />
+              </div>
 
-              <h3>{project.title}</h3>
+              <div className="project-content">
 
-              <ul className="project-points">
-                {project.points.map((point, index) => (
-                  <li key={index}>{point}</li>
-                ))}
-              </ul>
+                <h3>{project.title}</h3>
 
-             
+                <ul className="project-points">
+                  {project.points.map((point, index) => (
+                    <li key={index}>{point}</li>
+                  ))}
+                </ul>
 
-              <div className="project-tags">
-                {project.tags.map((tag, index) => (
-                  <span key={index} className="project-tag">
-                    {tag}
-                  </span>
-                ))}
+                <div className="project-tags">
+                  {project.tags.map((tag, index) => (
+                    <span key={index} className="project-tag">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
               </div>
 
             </div>
           ))}
+
         </div>
       </section>
 
