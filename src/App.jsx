@@ -349,10 +349,6 @@ function App() {
 
       <section id="leadership" className="section">
         <h2>Leadership</h2>
-        <p className="section-subtitle">
-          Strong leadership and communication help me translate complex insights
-          into action and drive impact with teams.
-        </p>
 
         <div className="grid two">
           {leadership.map((item) => (
