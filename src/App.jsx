@@ -163,7 +163,7 @@ function App() {
           <a href="#contact">Contact</a>
         </div>
 
-        <a className="resume-btn" href="/resume.pdf" download>
+        <a className="resume-btn" href="/Aaron_Tan_resume.pdf" download>
           Download Resume
         </a>
       </nav>
@@ -181,7 +181,7 @@ function App() {
           </p>
 
           <div className="hero-buttons">
-            <a href="/resume.pdf" download className="primary-btn">
+            <a href="/Aaron_Tan_resume.pdf" download className="primary-btn">
               Download Resume
             </a>
 
