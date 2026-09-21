@@ -670,6 +670,11 @@ a {
   -webkit-overflow-scrolling: touch;
 }
 
+.projects-list.fade-right {
+  mask-image: linear-gradient(to right, black calc(100% - 70px), transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black calc(100% - 70px), transparent 100%);
+}
+
 .projects-list::-webkit-scrollbar {
   height: 8px;
 }
@@ -765,8 +770,8 @@ a {
   flex-direction: column;
   gap: 1.25rem;
 
-  width: calc((100% - 1.75rem) / 2);
-  flex: 0 0 calc((100% - 1.75rem) / 2);
+  width: calc((100% - 3.5rem) / 2.35);
+  flex: 0 0 calc((100% - 3.5rem) / 2.35);
 
   padding: 1.75rem;
 
@@ -897,6 +902,35 @@ a {
   margin-top: -4px;
   margin-bottom: 24px;
   font-style: italic;
+}
+
+.scroll-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-top: -4px;
+  margin-bottom: 24px;
+
+  color: #c3a8ff !important;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1 !important;
+}
+
+.scroll-hint-arrow {
+  animation: nudgeRight 1.4s ease-in-out infinite;
+}
+
+@keyframes nudgeRight {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(6px);
+  }
 }
 
 .award-card {

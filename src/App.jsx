@@ -394,7 +394,10 @@ function App() {
 
       <section id="projects" className="section">
         <h2>Projects</h2>
-        <p className="section-subtitle">Scroll to explore →</p>
+        <p className="scroll-hint">
+          Scroll to explore
+          <FaChevronRight className="scroll-hint-arrow" />
+        </p>
 
         <div className="projects-reel">
           {canScrollLeft && (
@@ -408,7 +411,10 @@ function App() {
             </button>
           )}
 
-          <div className="projects-list" ref={projectsRef}>
+          <div
+            className={`projects-list ${canScrollRight ? "fade-right" : ""}`}
+            ref={projectsRef}
+          >
           {projects.map((project) => (
             <div className="project-card" key={project.title}>
 
