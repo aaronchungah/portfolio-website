@@ -360,9 +360,9 @@ a {
 
 .skill-row {
   display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 20px;
-  padding: 22px;
+  grid-template-columns: 240px 1fr;
+  gap: 24px;
+  padding: 32px;
   border-bottom: 1px solid var(--card-border);
 }
 
@@ -373,23 +373,24 @@ a {
 .skill-row h3 {
   margin: 0;
   color: #c3a8ff;
+  font-size: 1.3rem;
 }
 
 .skill-tags,
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
 }
 
 .skill-tags span,
 .tags span {
-  padding: 8px 12px;
+  padding: 10px 16px;
   border-radius: 8px;
   color: var(--text);
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid var(--card-border);
-  font-size: 13px;
+  font-size: 14.5px;
 }
 
 .grid {
@@ -518,7 +519,7 @@ a {
 
 .competition-image {
   width: 100%;
-  height: 190px;
+  height: 240px;
   object-fit: cover;
   display: block;
   opacity: 0.9;
@@ -527,31 +528,32 @@ a {
 .competition-badge {
   display: inline-block;
 
-  padding: 7px 14px;
-  margin-bottom: 12px;
+  padding: 8px 16px;
+  margin-bottom: 14px;
   border-radius: 999px;
 
   background: rgba(155, 108, 255, 0.16);
   border: 1px solid rgba(155, 108, 255, 0.45);
 
   color: #d8c7ff;
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   font-weight: 800;
   letter-spacing: 0.01em;
 }
 
 .competition-content {
-  padding: 22px 24px 26px;
+  padding: 28px 30px 32px;
 }
 
 .competition-content h3 {
-  margin: 0 0 6px;
-  font-size: 1.25rem;
+  margin: 0 0 8px;
+  font-size: 1.4rem;
   line-height: 1.3;
 }
 
 .competition-content .period {
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  font-size: 1rem;
 }
 
 .competition-details {
@@ -568,7 +570,7 @@ a {
 
   color: #c3a8ff;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .competition-details summary::-webkit-details-marker {
@@ -587,10 +589,10 @@ a {
 
 .competition-points {
   margin-top: 12px;
-  padding-left: 1.1rem;
+  padding-left: 1.2rem;
   color: #a8b0c3;
-  font-size: 0.92rem;
-  line-height: 1.7;
+  font-size: 1rem;
+  line-height: 1.75;
 }
 
 .competition-points li {
