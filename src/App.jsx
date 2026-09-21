@@ -1,5 +1,6 @@
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
-import { FaGithub, FaLinkedin, FaEnvelope, FaStar, FaBullhorn, FaGraduationCap, FaMedal, FaTrophy, FaCreditCard } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaStar, FaBullhorn, FaGraduationCap, FaMedal, FaTrophy, FaCreditCard, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const skills = {
   "Languages": [
@@ -199,6 +200,38 @@ const awards = [
 ];
 
 function App() {
+  const projectsRef = useRef(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
+
+  const updateScrollState = () => {
+    const el = projectsRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 4);
+    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 4);
+  };
+
+  useEffect(() => {
+    updateScrollState();
+
+    const el = projectsRef.current;
+    if (!el) return;
+
+    el.addEventListener("scroll", updateScrollState);
+    window.addEventListener("resize", updateScrollState);
+
+    return () => {
+      el.removeEventListener("scroll", updateScrollState);
+      window.removeEventListener("resize", updateScrollState);
+    };
+  }, []);
+
+  const scrollProjects = (direction) => {
+    const el = projectsRef.current;
+    if (!el) return;
+    el.scrollBy({ left: direction * el.clientWidth * 0.9, behavior: "smooth" });
+  };
+
   return (
     <div className="page">
       <nav className="navbar">
@@ -363,7 +396,19 @@ function App() {
         <h2>Projects</h2>
         <p className="section-subtitle">Scroll to explore →</p>
 
-        <div className="projects-list">
+        <div className="projects-reel">
+          {canScrollLeft && (
+            <button
+              type="button"
+              className="reel-arrow reel-arrow-left"
+              aria-label="Scroll projects left"
+              onClick={() => scrollProjects(-1)}
+            >
+              <FaChevronLeft />
+            </button>
+          )}
+
+          <div className="projects-list" ref={projectsRef}>
           {projects.map((project) => (
             <div className="project-card" key={project.title}>
 
@@ -402,6 +447,18 @@ function App() {
             </div>
           ))}
 
+          </div>
+
+          {canScrollRight && (
+            <button
+              type="button"
+              className="reel-arrow reel-arrow-right"
+              aria-label="Scroll projects right"
+              onClick={() => scrollProjects(1)}
+            >
+              <FaChevronRight />
+            </button>
+          )}
         </div>
       </section>
 
