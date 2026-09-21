@@ -2,24 +2,16 @@ import "./App.css";
 import { FaGithub, FaLinkedin, FaEnvelope, FaStar, FaBullhorn, FaGraduationCap, FaMedal } from "react-icons/fa";
 
 const skills = {
-  "Programming & Tools": [
-    "Python", "R", "SQL",
-    "Streamlit", "Prefect Server", "Git", "GitHub"
+  "Languages": [
+    "Python", "R", "Java", "JavaScript", "SQL", "HTML/CSS"
   ],
-  "Web Development":[
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "React",
-    "Node.js"
+  "Data & AI": [
+    "pandas", "NumPy", "scikit-learn", "TensorFlow", "Matplotlib",
+    "Plotly", "Power BI", "Tableau", "NLP", "LLMs"
   ],
-  "Data & Visualisation": [
-    "Pandas", "NumPy", "Scikit-learn", "Matplotlib", "Seaborn",
-    "Plotly", "GeoPandas", "Power BI", "Tableau", "Excel"
-  ],
-  "Statistics & ML": [
-    "Data Analysis", "Linear Regression", "Logistic Regression",
-    "KNN", "Decision Trees", "Naive Bayes", "Machine Learning"
+  "Databases & Development": [
+    "PostgreSQL", "MySQL", "React", "Node.js", "FastAPI",
+    "Prefect", "Git/GitHub", "Jupyter Notebook"
   ],
 };
 
