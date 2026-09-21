@@ -352,10 +352,11 @@ a {
 }
 
 .skills-box {
-  border: 1px solid var(--card-border);
+  border: 1px solid rgba(155, 108, 255, 0.35);
   border-radius: 16px;
   overflow: hidden;
-  background: rgba(14, 22, 40, 0.72);
+  background: rgba(18, 27, 48, 0.92);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.3);
 }
 
 .skill-row {
@@ -363,7 +364,11 @@ a {
   grid-template-columns: 240px 1fr;
   gap: 24px;
   padding: 32px;
-  border-bottom: 1px solid var(--card-border);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.skill-row:nth-child(even) {
+  background: rgba(255, 255, 255, 0.035);
 }
 
 .skill-row:last-child {
