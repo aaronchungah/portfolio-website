@@ -1094,6 +1094,11 @@ footer {
     gap: 18px;
   }
 
+  .experience-info {
+    width: 100%;
+    min-width: 0;
+  }
+
   .experience-info h3 {
     font-size: 2rem;
     line-height: 1.15;
