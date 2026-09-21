@@ -1,5 +1,5 @@
 import "./App.css";
-import { FaGithub, FaLinkedin, FaEnvelope, FaStar, FaBullhorn, FaGraduationCap, FaMedal } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaStar, FaBullhorn, FaGraduationCap, FaMedal, FaTrophy, FaCreditCard } from "react-icons/fa";
 
 const skills = {
   "Languages": [
@@ -15,15 +15,68 @@ const skills = {
   ],
 };
 
+const competitions = [
+  {
+    title: "Infineon AI Supply Chain Case Competition",
+    result: "2nd of 63 Teams | $2000 Prize",
+    period: "June 2026 – July 2026",
+    image: "/infineon.jpg",
+    points: [
+      "Built a full-stack AI supply-chain control tower combining LLM-based disruption detection, route optimisation and automated communications, identifying alternate routes that protected €4.53M (78%) of at-risk shipment value.",
+      "Engineered a Python web-scraping and NLP pipeline to structure live disruption events and map them to affected shipments, supporting monitoring of a corridor carrying 82.8% of shipment value.",
+      "Pitched the solution to 200+ Infineon staff and regional directors.",
+    ],
+  },
+  {
+    title: "PwC Whole Leadership Award 2026 Consulting Pitch",
+    result: "Winner | $1000 Prize",
+    period: "June 2026",
+    image: "/pwc.jpg",
+    points: [
+      "Advised a simulated client on implementing an AI chatbot to potentially reduce staff workload by up to 60% across 800 daily calls, defining rollout, performance monitoring and training measures to target 90%+ accuracy.",
+    ],
+  },
+  {
+    title: "NUS Tax Competition Debate Round",
+    result: "2nd of 52 Teams | $300 Prize",
+    period: "May 2026",
+    image: "/nustax.jpg",
+    points: [
+      "Debated AI, employment and corporate tax policy in Singapore before judges from PwC, EY and Deloitte.",
+    ],
+  },
+];
+
 const projects = [
   {
-    title: "Recipes Exploratory Data Analysis Project",
-    image: "/recipes.png",
-    points: ["Cleaned and analysed over 14,000 recipes to study how preparation time, cuisine type, and nutritional values influenced recipe approval.",
+    title: "Agentic AI Career Planning Platform for Undergraduates",
+    image: "/career-platform.png",
+    points: [
+      "Developed an agentic AI career-planning platform using LangGraph, Amazon Bedrock and AWS to generate personalised career roadmaps from student profiles and target roles, cutting search time by 70% in user testing.",
 
-      "Explored relationships between user ratings, ingredients, and engagement trends using exploratory data analysis techniques."],
+      "Built backend APIs and a multi-agent recommendation workflow that retrieves, ranks and returns relevant hackathons and projects from NUSMods, Devpost and GitHub to the frontend."
+    ],
+    tags: ["LangGraph", "Amazon Bedrock", "AWS", "Multi-Agent Systems", "Python", "APIs"],
+  },
+  {
+    title: "Causal Uplift Modelling for Targeted Marketing",
+    image: "/uplift-marketing.png",
+    points: [
+      "Evaluated the effectiveness of a retail marketing campaign through a randomised A/B test, finding promotions increased purchase conversion by 5.5% versus control.",
 
-    tags: ["Python", "Pandas", "Plotly", "Matplotlib", "EDA", "Visualisation"],
+      "Trained and tested S-/T-/X-Learner uplift models to identify promotion-responsive customers, boosting incremental purchases by 99.4% versus random targeting."
+    ],
+    tags: ["Python", "Causal Inference", "A/B Testing", "Uplift Modelling", "Machine Learning"],
+  },
+  {
+    title: "Payment Fraud Detection & Decisioning Data Science Project",
+    icon: <FaCreditCard />,
+    points: [
+      "Co-designed a real-time fraud decisioning system for Accept, Review or Block decisions under 300–400 ms latency and analyst-capacity constraints.",
+
+      "Built fraud-risk signals using Python, SQL and PostgreSQL, identifying a transaction fingerprint with 3.26x higher observed fraud rate than its broader comparison group on a chronological holdout."
+    ],
+    tags: ["Python", "SQL", "PostgreSQL", "Fraud Detection", "Real-time Systems"],
   },
   {
     title: "Heart Disease Regression Statistical Report",
@@ -54,6 +107,14 @@ const projects = [
 ];
 
 const experience = [
+  {
+    title: "Digital, Cloud & Data Consulting Intern (Incoming)",
+    company: "PricewaterhouseCoopers (PwC) Consulting",
+    logo: "/pwc-logo.png",
+    period: "December 2026 – January 2027",
+    duration: "2 months",
+    points: []
+  },
   {
     title: "Data Science and Analytics Intern",
     company: "Seagate Technologies",
@@ -147,6 +208,7 @@ function App() {
 
         <div className="nav-links">
           <a href="#about">About</a>
+          <a href="#competitions">Competitions</a>
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
@@ -164,14 +226,9 @@ function App() {
         <div className="hero-text">
           <p className="eyebrow">DATA SCIENTIST</p>
           <h1>
-            <span>Data scientist</span> passionate about driving business
-            optimisation.
+            <span>Data scientist</span> who can sell the story behind the
+            numbers.
           </h1>
-          <p className="hook">
-            I turn data into decisions, making sure that the right people understand
-            and act on it.
-          </p>
-
           <div className="hero-buttons">
             <a href="/Aaron_Tan_resume.pdf" download className="primary-btn">
               Download Resume
@@ -216,26 +273,72 @@ function App() {
       <section id="about" className="about-banner">
         <div className="team-bg"></div>
 
-        <div className="about-content">
-          <div>
-            <h2>About Me</h2>
-            <p>
-            I specialise in transforming raw data into actionable insights. I enjoy working with complex datasets and translating them into clear, meaningful findings that support informed decision-making.
-            <p>
+        <div className="about-inner">
+          <h2>About Me</h2>
 
-            </p>
-            Beyond technical analysis, one of my key strengths lies in communication. I love presenting insights, engaging stakeholders, and conveying analytical findings in a way that is both accessible and impactful.
-            </p>
-          </div>
+          <div className="about-content">
+            <div>
+              <p className="hook highlight about-highlight">
+                <FaTrophy />
+                3 x Case Competition Winner
+              </p>
 
-          <div className="contact-card">
-            <p><strong>Email</strong><br />aaronchungah@gmail.com</p>
-            <p><strong>Location</strong><br />Singapore</p>
-            <p>
-              <strong>Open to</strong><br />
-              Data Science / Analytics / Product Management / Consulting
-            </p>
+              <p>
+                I'm a Data Scientist by training, but I specialise in driving change.
+              </p>
+
+              <p>
+                With experience developing diverse technical solutions and pitching them to industry professionals, I bridge technology and business to ensure solutions are not just built, but successfully implemented and adopted.
+              </p>
+            </div>
+
+            <div className="contact-card">
+              <p><strong>Email</strong><br />aaronchungah@gmail.com</p>
+              <p><strong>Location</strong><br />Singapore</p>
+              <p>
+                <strong>Open to</strong><br />
+                Data Science / Analytics / Software Engineering / AI Engineering / Product Management / Consulting
+              </p>
+            </div>
           </div>
+        </div>
+      </section>
+
+      <section id="competitions" className="section">
+        <h2>Case Competition Wins</h2>
+
+        <div className="competitions-grid">
+          {competitions.map((comp) => (
+            <div className="competition-card" key={comp.title}>
+
+              <div className="competition-image-wrapper">
+                <img
+                  src={comp.image}
+                  alt={comp.title}
+                  className="competition-image"
+                />
+              </div>
+
+              <div className="competition-content">
+
+                <span className="competition-badge">{comp.result}</span>
+
+                <h3>{comp.title}</h3>
+                <p className="period">{comp.period}</p>
+
+                <details className="competition-details">
+                  <summary>View details</summary>
+                  <ul className="competition-points">
+                    {comp.points.map((point, index) => (
+                      <li key={index}>{point}</li>
+                    ))}
+                  </ul>
+                </details>
+
+              </div>
+
+            </div>
+          ))}
         </div>
       </section>
 
@@ -258,17 +361,22 @@ function App() {
 
       <section id="projects" className="section">
         <h2>Projects</h2>
+        <p className="section-subtitle">Scroll to explore →</p>
 
         <div className="projects-list">
           {projects.map((project) => (
             <div className="project-card" key={project.title}>
 
               <div className="project-image-wrapper">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="project-image"
-                />
+                {project.icon ? (
+                  <div className="project-icon">{project.icon}</div>
+                ) : (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="project-image"
+                  />
+                )}
               </div>
 
               <div className="project-content">
@@ -328,11 +436,13 @@ function App() {
           </div>
         </div>
 
-        <ul className="experience-points">
-          {item.points.map((point, index) => (
-            <li key={index}>{point}</li>
-          ))}
-        </ul>
+        {item.points.length > 0 && (
+          <ul className="experience-points">
+            {item.points.map((point, index) => (
+              <li key={index}>{point}</li>
+            ))}
+          </ul>
+        )}
 
       </div>
     ))}
